@@ -1,6 +1,8 @@
 import { BlogList } from '@/components/blog-list';
+import { getAllPosts } from '@/lib/server-utils';
 
-export default function StoriesPage() {
+export default async function StoriesPage() {
+  const posts = await getAllPosts();
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
@@ -10,7 +12,7 @@ export default function StoriesPage() {
             Discover stories, thinking, and expertise from writers on any topic.
           </p>
         </div>
-        <BlogList />
+        <BlogList posts={posts} />
       </div>
     </main>
   );

@@ -1,22 +1,28 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
-import { Header } from '@/components/header';
-import { ThemeProvider } from '@/components/theme-provider';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Noto_Sans, Playfair_Display, Source_Code_Pro } from "next/font/google";
+import { Header } from "@/components/header";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
+const sans = Noto_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
 });
 
-const playfairDisplay = Playfair_Display({ 
-  subsets: ['latin'],
-  variable: '--font-playfair-display',
+const serif = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
+});
+
+const mono = Source_Code_Pro({
+  subsets: ["latin"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
-  title: 'Medium Clone - Share Your Stories',
-  description: 'A beautiful platform for writers and readers to share and discover stories',
+  title: "Omnissa blogs - Share Your Stories",
+  description:
+    "A beautiful platform for writers and readers to share and discover stories",
 };
 
 export default function RootLayout({
@@ -26,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${playfairDisplay.variable}`}>
+      <body className={`${sans.variable} ${serif.variable}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

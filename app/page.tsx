@@ -1,22 +1,22 @@
 import { Hero } from '@/components/hero';
 import { FeaturedArticles } from '@/components/featured-articles';
 import { BlogList } from '@/components/blog-list';
-import { TrendingTopics } from '@/components/trending-topics';
+import { getAllPosts } from '@/lib/server-utils';
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getAllPosts();
+  const featuredPosts = posts.filter((post) => post.metadata.featured);
+
   return (
     <main>
       <Hero />
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="lg:col-span-2">
-            <FeaturedArticles />
+            <FeaturedArticles posts={featuredPosts} />
             <div className="mt-12">
-              <BlogList />
+              <BlogList posts={posts} />
             </div>
-          </div>
-          <div className="lg:col-span-1">
-            <TrendingTopics />
           </div>
         </div>
       </div>
