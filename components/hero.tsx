@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="bg-gradient-to-br from-primary/5 to-primary/10 border-b">
+    <section className="bg-linear-to-br from-primary/5 to-primary/10 border-b">
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-2xl">
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">

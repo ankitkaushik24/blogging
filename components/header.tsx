@@ -19,7 +19,7 @@ export function Header() {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-xs">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">

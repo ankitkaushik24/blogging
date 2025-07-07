@@ -263,7 +263,7 @@ export function WriteEditor() {
     content: '',
     editorProps: {
       attributes: {
-        class: 'prose prose-lg max-w-none focus:outline-none',
+        class: 'prose prose-lg max-w-none focus:outline-hidden',
       },
     },
     onUpdate: ({ editor }) => {
@@ -333,7 +333,7 @@ export function WriteEditor() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="sticky top-16 bg-white/80 backdrop-blur-sm border-b px-6 py-4 flex items-center justify-between">
+      <div className="sticky top-16 bg-white/80 backdrop-blur-xs border-b px-6 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Avatar className="h-8 w-8">
             <AvatarImage src="/avatars/01.png" alt="User" />
@@ -399,7 +399,7 @@ export function WriteEditor() {
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full editor-title border-0 outline-none resize-none bg-transparent"
+            className="w-full editor-title border-0 outline-hidden resize-none bg-transparent"
           />
         </div>
 
@@ -410,7 +410,7 @@ export function WriteEditor() {
             placeholder="Subtitle (optional)"
             value={subtitle}
             onChange={(e) => setSubtitle(e.target.value)}
-            className="w-full editor-subtitle border-0 outline-none resize-none bg-transparent"
+            className="w-full editor-subtitle border-0 outline-hidden resize-none bg-transparent"
           />
         </div>
 
