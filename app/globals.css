@@ -18,7 +18,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 250 42.86% 97.25%;
     --foreground: 20 14.3% 4.1%;
     --card: 0 0% 100%;
     --card-foreground: 20 14.3% 4.1%;
@@ -78,16 +78,18 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
   }
   .font-sans {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
   }
   .font-serif {
-      font-family: var(--font-serif), Georgia, serif;
-    }
+    font-family: var(--font-serif), Georgia, serif;
+  }
   .font-mono {
-    font-family: var(--font-mono), 'Courier New', Courier, monospace;
+    font-family: var(--font-mono), "Courier New", Courier, monospace;
   }
 }
 
@@ -112,7 +114,8 @@
 .ProseMirror {
   outline: none;
   @apply text-lg leading-relaxed text-gray-900;
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   line-height: 1.75;
   letter-spacing: -0.003em;
 }
@@ -154,7 +157,7 @@
 
 .ProseMirror pre {
   @apply bg-gray-900 text-gray-100 p-6 rounded-lg my-8 overflow-x-auto;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
 }
 
 .ProseMirror pre code {
@@ -170,7 +173,8 @@
   @apply border-0 border-t border-gray-200 my-12;
 }
 
-.ProseMirror ul, .ProseMirror ol {
+.ProseMirror ul,
+.ProseMirror ol {
   @apply ml-6 mb-6;
 }
 

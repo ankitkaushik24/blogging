@@ -1,10 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Noto_Sans, Playfair_Display, Source_Code_Pro } from "next/font/google";
+import { Outfit, Playfair_Display, Source_Code_Pro } from "next/font/google";
 import { Header } from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const sans = Noto_Sans({
+const sans = Outfit({
   subsets: ["latin"],
   variable: "--font-sans",
 });
