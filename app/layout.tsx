@@ -21,9 +21,8 @@ const mono = Source_Code_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Omnissa blogs - Share Your Stories",
-  description:
-    "A beautiful platform for writers and readers to share and discover stories",
+  title: "Engineering at Omnissa",
+  description: "Elevate the Digital Experience",
 };
 
 export default function RootLayout({
