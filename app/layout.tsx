@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Outfit, Playfair_Display, Source_Code_Pro } from "next/font/google";
 import { Header } from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
+import Footer from "@/components/footer";
 
 const sans = Outfit({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({
         >
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
