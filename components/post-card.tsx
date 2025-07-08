@@ -13,8 +13,8 @@ interface PostCardProps {
   [key: string]: any; // For additional props like className
 }
 
-export function PostCard({ 
-  post, 
+export function PostCard({
+  post,
   variant = "horizontal",
   ...otherProps
 }: PostCardProps) {
@@ -25,13 +25,11 @@ export function PostCard({
   // Common components
   const AuthorInfo = ({ className }: { className?: string }) => (
     <div className={cn("flex items-center space-x-2", className)}>
-      <Avatar className={cn(
-        variant === "magazine" ? "h-8 w-8" : "h-6 w-6"
-      )}>
+      <Avatar className={cn(variant === "magazine" ? "h-8 w-8" : "h-6 w-6")}>
         <AvatarImage src={authorAvatar} alt={authorDisplayName} />
-        <AvatarFallback className={cn(
-          variant === "magazine" ? "text-sm" : "text-xs"
-        )}>
+        <AvatarFallback
+          className={cn(variant === "magazine" ? "text-sm" : "text-xs")}
+        >
           {authorDisplayName[0]}
         </AvatarFallback>
       </Avatar>
@@ -50,34 +48,41 @@ export function PostCard({
   );
 
   const PostImage = ({ className }: { className?: string }) => (
-    <div className={cn("relative rounded-lg overflow-hidden group cursor-pointer", className)}>
-        <Image
-          src={post.metadata.image}
-          alt={post.metadata.title}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-      </div>
+    <div
+      className={cn(
+        "relative rounded-lg overflow-hidden group cursor-pointer",
+        className
+      )}
+    >
+      <Image
+        src={post.metadata.image}
+        alt={post.metadata.title}
+        fill
+        className="object-cover group-hover:scale-105 transition-transform duration-300"
+      />
+    </div>
   );
 
-  const PostContent = ({ titleClassName, descClassName }: { 
-    titleClassName?: string; 
+  const PostContent = ({
+    titleClassName,
+    descClassName,
+  }: {
+    titleClassName?: string;
     descClassName?: string;
   }) => (
     <div className="group cursor-pointer">
-        <h3 className={cn(
+      <h3
+        className={cn(
           "font-serif font-bold group-hover:text-primary transition-colors line-clamp-2",
           titleClassName
-        )}>
-          {post.metadata.title}
-        </h3>
-        <p className={cn(
-          "text-gray-600 line-clamp-2",
-          descClassName
-        )}>
-          {post.metadata.description}
-        </p>
-      </div>
+        )}
+      >
+        {post.metadata.title}
+      </h3>
+      <p className={cn("text-gray-600 line-clamp-2", descClassName)}>
+        {post.metadata.description}
+      </p>
+    </div>
   );
 
   const DateInfo = ({ className }: { className?: string }) => (
@@ -89,14 +94,14 @@ export function PostCard({
   // Horizontal layout
   if (variant === "horizontal") {
     return (
-      <Link href={`/story/${post.slug}`} className="border-b border-gray-100 pb-8 last:border-b-0">
+      <Link href={`/story/${post.slug}`} className="bg-card p-4 rounded-2xl">
         <div className="group cursor-pointer grid md:grid-cols-4 gap-6">
           <div className="md:col-span-3">
             <div className="flex items-center space-x-4 mb-3">
               <AuthorInfo />
               <DateInfo />
             </div>
-            <PostContent 
+            <PostContent
               titleClassName="text-xl md:text-2xl mb-2"
               descClassName="mb-4 text-sm md:text-base"
             />
@@ -113,11 +118,15 @@ export function PostCard({
   // Vertical layout
   if (variant === "vertical") {
     return (
-      <Link href={`/story/${post.slug}`} {...otherProps}>
+      <Link
+        href={`/story/${post.slug}`}
+        {...otherProps}
+        className={cn("bg-card p-4 rounded-2xl", otherProps.className)}
+      >
         <div className="group cursor-pointer">
           <PostImage className="h-48 mb-4" />
           <Categories className="mb-2" />
-          <PostContent 
+          <PostContent
             titleClassName="text-xl font-semibold mb-2"
             descClassName="mb-4"
           />
@@ -133,12 +142,16 @@ export function PostCard({
   // Magazine layout
   if (variant === "magazine") {
     return (
-      <Link href={`/story/${post.slug}`} {...otherProps}>
+      <Link
+        href={`/story/${post.slug}`}
+        {...otherProps}
+        className={cn("bg-card p-4 rounded-2xl", otherProps.className)}
+      >
         <div className="group cursor-pointer">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <Categories className="mb-3" />
-              <PostContent 
+              <PostContent
                 titleClassName="text-3xl mb-4"
                 descClassName="mb-6 text-lg leading-relaxed"
               />

@@ -24,7 +24,7 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
-            src="/assets/images/omnissa-logo.png"
+            src="assets/images/omnissa-logo.png"
             alt="Omnissa Logo"
             width={178}
             height={32}
