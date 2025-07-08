@@ -41,7 +41,7 @@ export function BlogList({
             <TabsTrigger
               key={category}
               value={category}
-              className="rounded-full px-4 py-2 text-sm font-medium border border-gray-200 bg-white data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:border-black hover:bg-gray-50 transition-colors"
+              className="rounded-full cursor-pointer px-4 py-2 text-sm font-medium border border-gray-200 bg-white data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:border-primary hover:bg-gray-50 transition-colors"
             >
               {category}
             </TabsTrigger>
