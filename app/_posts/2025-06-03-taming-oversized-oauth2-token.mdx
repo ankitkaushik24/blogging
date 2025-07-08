@@ -4,7 +4,7 @@ export const metadata = {
   date: "2025-06-03",
   categories: ["security", "oauth"],
   author: "samarp",
-  image: "assets/images/posts/2025/api-gateway.png",
+  image: "/blogging/assets/images/posts/2025/api-gateway.png",
   featured: true,
   description:
     "I vividly recall how a seemingly insignificant detail ended up disrupting our entire authentication flow. As an engineer at Omnissa Intelligence (OI), I was on the front line when our frontend-heavy application (with a Backend-for-Frontend (BFF) API Gateway) started mysteriously failing to authenticate certain users. We’d see login attempts succeed, only for users to be immediately logged out or stuck in reload loops. Diving into logs and browser data, we discovered the culprit: an OAuth2 JWT access token so large that it exceeded browser cookie limits, causing the cookie to be silently dropped. This is the story of how we diagnosed the “giant token” problem, learned from industry insights, and engineered a robust solution using envelope encryption to regain control of our sessions.",
@@ -46,7 +46,7 @@ Considering our situation, we decided to flip the model: instead of cramming a g
 
 ## Engineering the Solution: Envelope Encryption with Data Keys
 
-![Architecture](../assets/images/posts/2025/api-gateway.png "Architecture of the solution")
+![Architecture](/blogging/assets//images/posts/2025/api-gateway.png "Architecture of the solution")
 
 After brainstorming, our team at OI devised a solution that borrowed from the concept of envelope encryption (often used in cloud security) — but tailored to our needs. We introduced a two-layer token approach using **Data Encryption Keys (DEKs):**
 
@@ -88,7 +88,7 @@ Beyond solving the immediate token size problem and improving security, our new 
 
 Just as we were beginning to see the benefits of this new token encryption model, another unrelated production issue surfaced — one that appeared to have nothing to do with token size, yet turned out to be directly connected.
 
-![Memory Leak](../assets/images/posts/2025/memory-leak.png)
+![Memory Leak](/blogging/assets//images/posts/2025/memory-leak.png)
 
 Our authorization service — internally known as the OI Authorization Server — had started experiencing memory pressure. Specifically, we saw an OutOfMemoryError (OOM) in production. This was surprising because the service wasn’t expected to be memory-intensive. After analyzing heap dumps, we discovered that it was holding on to hundreds of thousands of bearer tokens in memory(Expired ones).
 
@@ -103,7 +103,7 @@ Fortunately, because we had already implemented our Redis-backed, envelope-encry
 - Persisted encrypted tokens in Redis with short TTLs
 - Leveraged the same DEK encryption pattern
 
-![RedisBackedOAuth2AuthorizationService](../assets/images/posts/2025/redis-auth-service-class.png)
+![RedisBackedOAuth2AuthorizationService](/blogging/assets//images/posts/2025/redis-auth-service-class.png)
 
 With this change, we removed duplicate token storage, improved security posture (no more plaintext tokens in memory), and resolved the OOM condition cleanly. The system now uses Redis as the single source of truth for active tokens, with encrypted data and time-bound retention.
 

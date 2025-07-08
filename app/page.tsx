@@ -1,7 +1,7 @@
-import { Hero } from '@/components/hero';
-import { FeaturedArticles } from '@/components/featured-articles';
-import { BlogList } from '@/components/blog-list';
-import { getAllPosts } from '@/lib/server-utils';
+import { Hero } from "@/components/hero";
+import { FeaturedArticles } from "@/components/featured-articles";
+import { BlogList } from "@/components/blog-list";
+import { getAllPosts } from "@/lib/server-utils";
 
 export default async function Home() {
   const posts = await getAllPosts();
@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <main>
       <Hero />
-      <div className="container mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="lg:col-span-2">
             <FeaturedArticles posts={featuredPosts} />
