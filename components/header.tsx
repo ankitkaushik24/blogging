@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Search, PenTool, Bell, User, Settings, LogOut } from "lucide-react";
+import OmnissaLogo from "./omnissa-logo";
 
 export function Header() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,12 +24,7 @@ export function Header() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <Image
-            src="/blogging/assets/images/omnissa-logo.png"
-            alt="Omnissa Logo"
-            width={178}
-            height={32}
-          />
+          <OmnissaLogo className="text-foreground" width={178} height={32} />
           {/* <span className="font-serif text-2xl font-bold">Omnissa</span> */}
         </Link>
 

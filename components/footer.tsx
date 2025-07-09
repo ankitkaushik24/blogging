@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Facebook, Youtube, X, MessageSquare } from "lucide-react";
+import OmnissaLogo from "./omnissa-logo";
 
 export default function Footer() {
   return (
@@ -9,9 +10,7 @@ export default function Footer() {
         {/* Left: Logo, Social, Address */}
         <div className="flex flex-col items-start md:items-start gap-8">
           <div className="flex flex-col items-start w-full">
-            <Image
-              src="/blogging/assets/images/omnissa.svg"
-              alt="Omnissa logo"
+            <OmnissaLogo
               width={220}
               height={44}
               className="text-white mb-8 mt-2"
