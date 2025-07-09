@@ -5,7 +5,7 @@ import OmnissaLogo from "./omnissa-logo";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gradient-to-b from-[#6d6e8a] to-[#23294a] text-foreground pt-16 pb-0">
+    <footer className="footer-gradient-bar w-full bg-gradient-to-b from-[#6d6e8a] to-[#23294a] text-foreground pt-16 pb-0">
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row md:justify-between gap-10">
         {/* Left: Logo, Social, Address */}
         <div className="flex flex-col items-start md:items-start gap-8">
