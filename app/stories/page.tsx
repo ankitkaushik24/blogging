@@ -1,5 +1,5 @@
-import { BlogList } from '@/components/blog-list';
-import { getAllPosts } from '@/lib/server-utils';
+import { BlogList } from "@/components/blog-list";
+import { getAllPosts } from "@/lib/server-utils";
 
 export default async function StoriesPage() {
   const posts = await getAllPosts();

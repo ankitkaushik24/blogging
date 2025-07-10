@@ -134,8 +134,8 @@
     --accent-foreground: #374151;
     --destructive: #ef4444;
     --destructive-foreground: #ffffff;
-    --border: #d1d5db;
-    --input: #d1d5db;
+    --border: #dfdced;
+    --input: #dfdced;
     --ring: #4a12f0;
     --chart-1: #6366f1;
     --chart-2: #4f46e5;
@@ -148,7 +148,7 @@
     --sidebar-primary-foreground: #ffffff;
     --sidebar-accent: #e0e7ff;
     --sidebar-accent-foreground: #374151;
-    --sidebar-border: #d1d5db;
+    --sidebar-border: #dfdced;
     --sidebar-ring: #6366f1;
     /* --font-sans: Inter, sans-serif;
     --font-serif: Merriweather, serif;
@@ -180,11 +180,11 @@
     --primary: #818cf8;
     --primary-foreground: #0f172a;
     --secondary: #2d3748;
-    --secondary-foreground: #d1d5db;
+    --secondary-foreground: #dfdced;
     --muted: #1e293b;
     --muted-foreground: #9ca3af;
     --accent: #374151;
-    --accent-foreground: #d1d5db;
+    --accent-foreground: #dfdced;
     --destructive: #ef4444;
     --destructive-foreground: #0f172a;
     --border: #4b5563;
@@ -200,7 +200,7 @@
     --sidebar-primary: #818cf8;
     --sidebar-primary-foreground: #0f172a;
     --sidebar-accent: #374151;
-    --sidebar-accent-foreground: #d1d5db;
+    --sidebar-accent-foreground: #dfdced;
     --sidebar-border: #4b5563;
     --sidebar-ring: #818cf8;
     /* --font-sans: Inter, sans-serif;
@@ -231,6 +231,7 @@
     @apply bg-background text-foreground;
     font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
       sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
   .font-sans {
     font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -426,6 +427,7 @@
 
 .footer-gradient-bar {
   position: relative;
+  background: transparent linear-gradient(180deg, #4a5174 0%, #333958 100%);
 
   &::before {
     content: "";

@@ -1,23 +1,10 @@
-"use client";
-
-import { useState } from "react";
+import { getAllPosts } from "@/lib/server-utils";
 import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Search, PenTool, Bell, User, Settings, LogOut } from "lucide-react";
 import OmnissaLogo from "./omnissa-logo";
+import PostSearchBox from "./post-search-box";
 
-export function Header() {
-  const [searchQuery, setSearchQuery] = useState("");
+export async function Header() {
+  const posts = await getAllPosts();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-xs">
@@ -30,21 +17,12 @@ export function Header() {
 
         {/* Search */}
         <div className="hidden md:flex flex-1 max-w-md mx-8">
-          <div className="relative w-full">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-            <Input
-              type="text"
-              placeholder="Search Omnissa"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 bg-gray-100 border-0 focus:bg-white focus:ring-2 focus:ring-primary/20"
-            />
-          </div>
+          <PostSearchBox posts={posts} />
         </div>
 
         {/* Actions */}
         <div className="flex items-center space-x-4">
-          <Link href="/write">
+          {/* <Link href="/write">
             <Button
               variant="ghost"
               size="sm"
@@ -85,7 +63,7 @@ export function Header() {
                 <span>Log out</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </div>
       </div>
     </header>

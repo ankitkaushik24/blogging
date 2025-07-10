@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
 export async function getPost(slug: string) {
   const { default: content, metadata } = await import(
@@ -9,12 +9,12 @@ export async function getPost(slug: string) {
 }
 
 export async function getAllPosts() {
-  const files = fs.readdirSync(path.join(process.cwd(), 'app/_posts'));
+  const files = fs.readdirSync(path.join(process.cwd(), "app/_posts"));
   const posts = await Promise.all(
     files
-      .filter((file) => file.endsWith('.mdx'))
+      .filter((file) => file.endsWith(".mdx"))
       .map(async (file) => {
-        const slug = file.replace('.mdx', '');
+        const slug = file.replace(".mdx", "");
         const { metadata } = await getPost(slug);
         return { slug, metadata };
       })

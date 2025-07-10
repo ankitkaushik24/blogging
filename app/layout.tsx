@@ -1,6 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Outfit, Playfair_Display, Source_Code_Pro } from "next/font/google";
+import {
+  Outfit,
+  Playfair_Display,
+  Source_Code_Pro,
+  Noto_Sans_JP,
+} from "next/font/google";
 import { Header } from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
@@ -8,6 +13,9 @@ import Footer from "@/components/footer";
 const sans = Outfit({
   subsets: ["latin"],
   variable: "--font-sans",
+  fallback: ["sans-serif"],
+  display: "swap",
+  weight: ["100", "200", "300", "400"],
 });
 
 const serif = Playfair_Display({

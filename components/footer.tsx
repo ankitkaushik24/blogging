@@ -1,56 +1,75 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Linkedin, Facebook, Youtube, X, MessageSquare } from "lucide-react";
 import OmnissaLogo from "./omnissa-logo";
 
 export default function Footer() {
   return (
-    <footer className="footer-gradient-bar w-full bg-gradient-to-b from-[#6d6e8a] to-[#23294a] text-foreground pt-16 pb-0">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row md:justify-between gap-10">
+    <footer className="footer-gradient-bar w-full text-foreground pb-0">
+      <div className="max-w-7xl mx-auto py-16 px-6 md:px-8 flex flex-col md:flex-row md:justify-between gap-10">
         {/* Left: Logo, Social, Address */}
-        <div className="flex flex-col items-start md:items-start gap-8">
+        <div className="flex flex-col items-start md:items-start">
           <div className="flex flex-col items-start w-full">
-            <OmnissaLogo
-              width={220}
-              height={44}
-              className="text-white mb-8 mt-2"
-            />
-            <div className="flex gap-8 mb-8">
+            <OmnissaLogo width={220} height={44} className="text-white" />
+            <div className="flex gap-4 mt-11 mb-9">
               <Link
                 href="https://www.linkedin.com/company/omnissa/"
                 aria-label="LinkedIn"
-                className="rounded-full bg-primary w-12 h-12 flex items-center justify-center hover:bg-primary/80 transition-colors shadow-lg"
+                className="rounded-full bg-primary w-11 h-11 flex items-center justify-center hover:bg-primary/80 transition-colors shadow-lg"
                 target="_blank"
               >
-                <Linkedin className="w-6 h-6 text-white" />
+                <Image
+                  src="/blogging/assets/icons/linkedin.svg"
+                  alt="LinkedIn"
+                  width={24}
+                  height={23}
+                  className="w-5 h-5"
+                />
               </Link>
               <Link
                 href="https://www.facebook.com/WeAreOmnissa"
                 aria-label="Facebook"
-                className="rounded-full bg-primary w-12 h-12 flex items-center justify-center hover:bg-primary/80 transition-colors shadow-lg"
+                className="rounded-full bg-primary w-11 h-11 flex items-center justify-center hover:bg-primary/80 transition-colors shadow-lg"
                 target="_blank"
               >
-                <Facebook className="w-6 h-6 text-white" />
+                <Image
+                  src="/blogging/assets/icons/facebook.svg"
+                  alt="Facebook"
+                  width={20}
+                  height={20}
+                  className="w-5 h-5"
+                />
               </Link>
               <Link
                 href="https://www.youtube.com/@WeAreOmnissa"
                 aria-label="YouTube"
-                className="rounded-full bg-primary w-12 h-12 flex items-center justify-center hover:bg-primary/80 transition-colors shadow-lg"
+                className="rounded-full bg-primary w-11 h-11 flex items-center justify-center hover:bg-primary/80 transition-colors shadow-lg"
                 target="_blank"
               >
-                <Youtube className="w-6 h-6 text-white" />
+                <Image
+                  src="/blogging/assets/icons/youtube.svg"
+                  alt="YouTube"
+                  width={24}
+                  height={17}
+                  className="w-5 h-5"
+                />
               </Link>
               <Link
                 href="https://twitter.com/WeAreOmnissa"
                 aria-label="X"
-                className="rounded-full bg-primary w-12 h-12 flex items-center justify-center hover:bg-primary/80 transition-colors shadow-lg"
+                className="rounded-full bg-primary w-11 h-11 flex items-center justify-center hover:bg-primary/80 transition-colors shadow-lg"
                 target="_blank"
               >
-                <X className="w-6 h-6 text-white" />
+                <Image
+                  src="/blogging/assets/icons/x.svg"
+                  alt="X"
+                  width={17}
+                  height={17}
+                  className="w-5 h-5"
+                />
               </Link>
             </div>
           </div>
-          <div className="text-base text-gray-300 leading-relaxed font-light mt-2">
+          <div className="text-border leading-[22px] text-[18px] font-extralight">
             <div>© 2025 Omnissa, LLC</div>
             <div>590 E Middlefield Road,</div>
             <div>Mountain View CA 94043</div>
@@ -59,8 +78,10 @@ export default function Footer() {
         </div>
         {/* Center: Offerings & Resources */}
         <div>
-          <div className="text-xl font-normal text-white mb-4">Offerings</div>
-          <ul className="space-y-2 text-base text-gray-300 font-light">
+          <div className="text-[22px] font-normal text-white mb-4">
+            Offerings
+          </div>
+          <ul className="space-y-2 text-base text-border font-light">
             <li>
               <Link
                 href="https://www.omnissa.com/platform/"
@@ -88,8 +109,10 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <div className="text-xl font-normal text-white mb-4">Resources</div>
-          <ul className="space-y-2 text-base text-gray-300 font-light">
+          <div className="text-[22px] font-normal text-white mb-4">
+            Resources
+          </div>
+          <ul className="space-y-2 text-base text-border font-light">
             <li>
               <Link
                 href="https://www.omnissa.com/insights/#Blog"
@@ -141,8 +164,8 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <div className="text-xl font-normal text-white mb-4">Company</div>
-          <ul className="space-y-2 text-base text-gray-300 font-light">
+          <div className="text-[22px] font-normal text-white mb-4">Company</div>
+          <ul className="space-y-2 text-base text-border font-light">
             <li>
               <Link
                 href="https://www.omnissa.com/about-us/"
@@ -179,8 +202,8 @@ export default function Footer() {
         </div>
       </div>
       {/* Bottom bar */}
-      <div className="w-full bg-[#23294a] text-gray-300 text-center py-4 mt-16 text-base border-t border-[#23294a]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6">
+      <div className="w-full bg-[#23294a] text-border text-center py-6 font-extralight border-t border-[#23294a]">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center gap-2 md:gap-3">
           <Link
             href="https://www.omnissa.com/trust-center/"
             className="hover:underline"
