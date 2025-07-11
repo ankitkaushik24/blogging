@@ -3,12 +3,31 @@ import { getAllPosts, getPost } from "@/lib/server-utils";
 import { PostHeader } from "@/components/post-header";
 import { PostImage } from "@/components/post-image";
 import { PostTags } from "@/components/post-tags";
+import { Metadata } from "next";
+import { AUTHORS } from "@/lib/authors";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
   return posts.map((post) => ({
     id: post.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: StoryPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const { metadata } = await getPost(id);
+  if (!metadata) return {};
+  return {
+    title: metadata.title,
+    description: metadata.description,
+    authors: [{ name: AUTHORS[metadata.author]?.name }],
+    category: metadata.categories[0],
+    keywords: metadata.tags,
+    assets: metadata.image,
+    // ...other SEO fields
+  };
 }
 
 interface StoryPageProps {

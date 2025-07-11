@@ -1,10 +1,11 @@
+import { PostMetadata } from "@/types";
 import fs from "fs";
 import path from "path";
 
 export async function getPost(slug: string) {
-  const { default: content, metadata } = await import(
+  const { default: content, metadata } = (await import(
     `@/app/_posts/${slug}.mdx`
-  );
+  )) as { default: any; metadata: PostMetadata };
   return { content, metadata };
 }
 
