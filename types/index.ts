@@ -6,5 +6,6 @@ export type PostMetadata = {
   author: string; // Author ID that maps to AUTHORS
   image: string;
   tags: string[];
+  hidden?: boolean;
   categories: string[];
 };
