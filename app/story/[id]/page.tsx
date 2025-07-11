@@ -23,9 +23,9 @@ export async function generateMetadata({
     title: metadata.title,
     description: metadata.description,
     authors: [{ name: AUTHORS[metadata.author]?.name }],
-    category: metadata.categories[0],
-    keywords: metadata.tags,
-    assets: metadata.image,
+    // category: metadata.categories[0],
+    // keywords: metadata.tags,
+    // assets: metadata.image,
     // ...other SEO fields
   };
 }

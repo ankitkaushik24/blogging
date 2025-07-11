@@ -13,7 +13,7 @@ export async function Header() {
         <Link href="/" className="flex items-center space-x-4">
           <OmnissaLogo className="text-foreground" width={178} height={32} />
           <div className="w-[1px] h-11 bg-border"></div>
-          <span className="nav-title">Engineering Blogs</span>
+          <span className="nav-title">Engineering</span>
         </Link>
 
         {/* Search */}
