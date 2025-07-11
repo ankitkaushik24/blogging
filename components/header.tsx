@@ -10,9 +10,10 @@ export async function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-xs">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-4">
           <OmnissaLogo className="text-foreground" width={178} height={32} />
-          {/* <span className="font-serif text-2xl font-bold">Omnissa</span> */}
+          <div className="w-[1px] h-11 bg-border"></div>
+          <span className="nav-title">Engineering Blogs</span>
         </Link>
 
         {/* Search */}
